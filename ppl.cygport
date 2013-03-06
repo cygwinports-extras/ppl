@@ -15,10 +15,12 @@ HOMEPAGE="http://bugseng.com/products/ppl/"
 SRC_URI="http://bugseng.com/products/ppl/download/ftp/releases/${VERSION}/ppl-${VERSION}.tar.lzma"
 PATCH_URI="0.11-automake.patch"
 
-PKG_NAMES="ppl ppl-doc libppl libppl-devel"
+PKG_NAMES="ppl ppl-doc libppl9 libppl_c4 libpwl5 libppl-devel"
 ppl_CONTENTS="--exclude=ppl-config* --exclude=*-html usr/bin/*.exe usr/share/doc/ usr/share/man/man1/"
 ppl_doc_CONTENTS="usr/share/doc/ppl/*-html/"
-libppl_CONTENTS="usr/bin/cygppl-9.dll usr/bin/cygppl_c-4.dll usr/bin/cygpwl-5.dll"
+libppl9_CONTENTS="usr/bin/cygppl-9.dll"
+libppl_c4_CONTENTS="usr/bin/cygppl_c-4.dll"
+libpwl5_CONTENTS="usr/bin/cygpwl-5.dll"
 libppl_devel_CONTENTS="usr/bin/ppl-config* usr/include/ usr/lib/ usr/share/aclocal/
                        usr/share/man/man1/ppl-config.* usr/share/man/man3/"
 
