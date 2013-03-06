@@ -1,0 +1,84 @@
+interfaces/Prolog/*/Makefile.am: `pkglibdir' is not a legitimate directory for `DATA'
+
+--- origsrc/ppl-0.11.2/interfaces/Prolog/Ciao/Makefile.am	2011-02-27 03:07:47.000000000 -0600
++++ src/ppl-0.11.2/interfaces/Prolog/Ciao/Makefile.am	2013-03-05 21:46:08.246068900 -0600
+@@ -170,7 +170,8 @@ $(NO_UNDEFINED_FLAG) \
+ -module \
+ -avoid-version
+ 
+-pkglib_DATA = ppl_ciao.po
++prologdir = $(pkglibdir)
++prolog_DATA = ppl_ciao.po
+ 
+ ppl_ciao.pl: $(interface_generator_dependencies)
+ 	$(M4) --prefix-builtin -I../.. -I$(srcdir)/.. -I$(srcdir)/../.. \
+--- origsrc/ppl-0.11.2/interfaces/Prolog/GNU/Makefile.am	2011-02-27 03:07:47.000000000 -0600
++++ src/ppl-0.11.2/interfaces/Prolog/GNU/Makefile.am	2013-03-05 21:46:20.198752600 -0600
+@@ -169,7 +169,8 @@ ppl_gprolog.pl: $(interface_generator_de
+ 	$(M4) --prefix-builtin -I../.. -I$(srcdir)/.. -I$(srcdir)/../.. \
+            $(srcdir)/ppl_interface_generator_gprolog_pl.m4 > $@
+ 
+-pkglib_DATA = ppl_gprolog.pl
++prologdir = $(pkglibdir)
++prolog_DATA = ppl_gprolog.pl
+ 
+ bin_PROGRAMS = ppl_gprolog
+ 
+--- origsrc/ppl-0.11.2/interfaces/Prolog/SICStus/Makefile.am	2011-02-27 03:07:47.000000000 -0600
++++ src/ppl-0.11.2/interfaces/Prolog/SICStus/Makefile.am	2013-03-05 21:56:31.006688800 -0600
+@@ -69,7 +69,8 @@ ppl_sicstus_SOURCES =
+ 
+ if ENABLE_SHARED
+ 
+-pkglib_DATA = ppl_sicstus.pl ppl_sicstus.s.o
++prologdir = $(pkglibdir)
++prolog_DATA = ppl_sicstus.pl ppl_sicstus.s.o
+ 
+ ppl_sicstus.so: ppl_sicstus.pl $(top_builddir)/src/libppl.la $(WATCHDOG_LIBRARY) libppl_sicstus.la
+ 	$(LIBTOOL) --mode=link --tag=CXX \
+@@ -87,7 +88,8 @@ install-data-local: ppl_sicstus.so
+ 
+ else !ENABLE_SHARED
+ 
+-pkglib_DATA = ppl_sicstus.pl
++prologdir = $(pkglibdir)
++prolog_DATA = ppl_sicstus.pl
+ 
+ endif !ENABLE_SHARED
+ 
+--- origsrc/ppl-0.11.2/interfaces/Prolog/SWI/Makefile.am	2011-02-27 03:07:47.000000000 -0600
++++ src/ppl-0.11.2/interfaces/Prolog/SWI/Makefile.am	2013-03-05 21:46:33.541515800 -0600
+@@ -189,7 +189,8 @@ $(NO_UNDEFINED_FLAG) \
+ bin_PROGRAMS = ppl_pl
+ ppl_pl_SOURCES = ppl_pl.cc
+ 
+-pkglib_DATA = ppl_swiprolog.pl
++prologdir = $(pkglibdir)
++prolog_DATA = ppl_swiprolog.pl
+ 
+ CLPQ_TESTS_NONSTRICT = \
+ ack.clpq \
+--- origsrc/ppl-0.11.2/interfaces/Prolog/XSB/Makefile.am	2011-02-27 03:07:47.000000000 -0600
++++ src/ppl-0.11.2/interfaces/Prolog/XSB/Makefile.am	2013-03-05 21:46:38.343790400 -0600
+@@ -188,7 +188,8 @@ $(NO_UNDEFINED_FLAG) \
+ -module \
+ -avoid-version
+ 
+-pkglib_DATA = ppl_xsb.xwam
++prologdir = $(pkglibdir)
++prolog_DATA = ppl_xsb.xwam
+ 
+ ppl_xsb.xwam: ppl_xsb.H ppl_xsb.cc libppl_xsb.la
+ 	cp -f ppl_xsb.cc ppl_xsb.c
+--- origsrc/ppl-0.11.2/interfaces/Prolog/YAP/Makefile.am	2011-02-27 03:07:47.000000000 -0600
++++ src/ppl-0.11.2/interfaces/Prolog/YAP/Makefile.am	2013-03-05 21:46:44.071118000 -0600
+@@ -179,7 +179,8 @@ $(NO_UNDEFINED_FLAG) \
+ -module \
+ -avoid-version
+ 
+-pkglib_DATA = ppl_yap.pl
++prologdir = $(pkglibdir)
++prolog_DATA = ppl_yap.pl
+ 
+ CLPQ_TESTS_NONSTRICT = \
+ ack.clpq \

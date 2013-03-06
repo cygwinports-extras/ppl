@@ -1,0 +1,27 @@
+NAME="ppl"
+VERSION=0.11.2
+RELEASE=1
+CATEGORY="Libs"
+SUMMARY="Parma Polyhedra Library"
+DESCRIPTION="The Parma Polyhedra Library (PPL) provides numerical abstractions
+especially targeted at applications in the field of analysis and verification
+of complex systems. These abstractions include convex polyhedra, defined as the
+intersection of a finite number of (open or closed) halfspaces, each described
+by a linear inequality (strict or non-strict) with rational coefficients; some
+special classes of polyhedra shapes that offer interesting complexity/precision
+tradeoffs; and grids which represent regularly spaced points that satisfy a set
+of linear congruence relations."
+HOMEPAGE="http://bugseng.com/products/ppl/"
+SRC_URI="http://bugseng.com/products/ppl/download/ftp/releases/${VERSION}/ppl-${VERSION}.tar.lzma"
+PATCH_URI="0.11-automake.patch"
+
+PKG_NAMES="ppl ppl-doc libppl libppl-devel"
+ppl_CONTENTS="--exclude=ppl-config* --exclude=*-html usr/bin/*.exe usr/share/doc/ usr/share/man/man1/"
+ppl_doc_CONTENTS="usr/share/doc/ppl/*-html/"
+libppl_CONTENTS="usr/bin/cygppl-9.dll usr/bin/cygppl_c-4.dll usr/bin/cygpwl-5.dll"
+libppl_devel_CONTENTS="usr/bin/ppl-config* usr/include/ usr/lib/ usr/share/aclocal/
+                       usr/share/man/man1/ppl-config.* usr/share/man/man3/"
+
+WANT_AUTOMAKE=1.11
+
+KEEP_LA_FILES="none"
