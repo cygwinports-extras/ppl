@@ -13,7 +13,10 @@ tradeoffs; and grids which represent regularly spaced points that satisfy a set
 of linear congruence relations."
 HOMEPAGE="http://bugseng.com/products/ppl/"
 SRC_URI="http://bugseng.com/products/ppl/download/ftp/releases/${VERSION}/ppl-${VERSION}.tar.lzma"
-PATCH_URI="0.11-automake.patch"
+PATCH_URI="
+	http://pkgs.fedoraproject.org/cgit/ppl.git/plain/ppl-gmp-5.1.0.patch
+	0.11-automake.patch
+"
 
 PKG_NAMES="ppl ppl-doc libppl9 libppl_c4 libpwl5 libppl-devel"
 ppl_CONTENTS="--exclude=ppl-config* --exclude=*-html usr/bin/*.exe usr/share/doc/ usr/share/man/man1/"
